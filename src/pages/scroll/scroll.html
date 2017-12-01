@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-grid class="calendar-header" no-padding>
+    <ion-row>
+      <ion-col>
+        <span class="title">
+          カレンダー
+        </span>
+      </ion-col>
+    </ion-row>
+    <ion-row class="weekday" justify-content-center>
+      <ion-col>日</ion-col>
+      <ion-col>月</ion-col>
+      <ion-col>火</ion-col>
+      <ion-col>水</ion-col>
+      <ion-col>木</ion-col>
+      <ion-col>金</ion-col>
+      <ion-col>土</ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+
+
+<ion-content>
+  <ion-infinite-scroll position="top" (ionInfinite)="doInfinite($event)" threshold="1%">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <ion-list [virtualScroll]="cal" [headerFn]="checkInitialChange" approxItemHeight="160px" approxHeaderHeight="40px" #scroll bufferRatio=20>
+    <ion-item-divider *virtualHeader="let header" class="itemHeader">
+      <span class="ym">
+        {{ header }}
+      </span>
+    </ion-item-divider>
+    <ion-item *virtualItem="let c" no-lines>
+      <div id="c{{c.year}}{{c.month}}" class="calItem">
+        <table>
+          <tbody>
+            <tr *ngFor="let week of c.week; let w = index;">
+              <td *ngFor="let day of week; let d = index;" [ngClass]="{'td-other':day.other}">
+                <div class="day">
+                  <span [ngClass]="{'other':day.other}">{{day.day}}</span>
+                </div>
+                <div class="circle" *ngIf="!day.other">●</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </ion-item>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfiniteBottom($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

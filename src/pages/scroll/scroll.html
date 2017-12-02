@@ -21,7 +21,7 @@
 
 
 <ion-content>
-  <ion-infinite-scroll position="top" (ionInfinite)="doInfinite($event)" threshold="1%">
+  <ion-infinite-scroll position="top" (ionInfinite)="doInfinite($event)" >
     <ion-infinite-scroll-content></ion-infinite-scroll-content>
   </ion-infinite-scroll>
   <ion-list [virtualScroll]="cal" [headerFn]="checkInitialChange" approxItemHeight="160px" approxHeaderHeight="40px" #scroll bufferRatio=20>

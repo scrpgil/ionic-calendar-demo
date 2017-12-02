@@ -88,13 +88,15 @@ export class ScrollPage {
                 month = ym[1];
                 let bc = this.calendar.getCalendarYM(year, month);
                 this.cal.unshift(bc);
-                this.content.scrollTo(0, this.itemHeight * i, 0);
             }
-            setTimeout(()=>{
-                this.loading = false;
-            }, 20);
-            infiniteScroll.complete();
         }
+        setTimeout(()=>{
+            console.log(this.itemHeight * 6);
+            this.content.scrollTo(0, this.itemHeight * 6, 0);
+            setTimeout(()=>{
+                infiniteScroll.complete();
+                this.loading = false;
+            }, 10);
+        }, 50);
     }
-
 }

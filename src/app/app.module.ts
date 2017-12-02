@@ -5,7 +5,7 @@ import { MyApp } from './app.component';
 
 import { ScrollPageModule } from '../pages/scroll/scroll.module';
 import { SwipePageModule } from '../pages/swipe/swipe.module';
-import { TabsPage } from '../pages/tabs/tabs';
+import { TabsPageModule } from '../pages/tabs/tabs.module';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -13,26 +13,25 @@ import { CalendarProvider } from '../providers/calendar/calendar';
 
 
 @NgModule({
-  declarations: [
-    MyApp,
-    TabsPage
-  ],
-  imports: [
-    BrowserModule,
-    ScrollPageModule,
-    SwipePageModule,
-    IonicModule.forRoot(MyApp)
-  ],
-  bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    TabsPage
-  ],
-  providers: [
-    StatusBar,
-    SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    CalendarProvider
-  ]
+    declarations: [
+        MyApp,
+    ],
+    imports: [
+        TabsPageModule ,
+        BrowserModule,
+        ScrollPageModule,
+        SwipePageModule,
+        IonicModule.forRoot(MyApp)
+    ],
+    bootstrap: [IonicApp],
+    entryComponents: [
+        MyApp,
+    ],
+    providers: [
+        StatusBar,
+        SplashScreen,
+        {provide: ErrorHandler, useClass: IonicErrorHandler},
+        CalendarProvider
+    ]
 })
 export class AppModule {}

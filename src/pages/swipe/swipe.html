@@ -10,7 +10,7 @@
   </ion-grid>
 </ion-header>
 <ion-content no-bounce>
-  <ion-slides #Slides (ionSlidePrevEnd)="beforeSlide()" (ionSlideNextEnd)="nextSlide()" initialSlide="1">
+  <ion-slides #Slides (ionSlidePrevEnd)="beforeSlide()" (ionSlideNextEnd)="nextSlide()">
     <ion-slide *ngFor="let c of cal; let idx = index;">
       <table class="date-table">
         <tbody class="date-body">

@@ -13,7 +13,6 @@ export class SwipePage {
     @ViewChild("Slides") slides;
     cal:any = [];
     current_calendar:any = [];
-    wait:boolean = false;
 
     constructor(
         public navCtrl: NavController, 
@@ -34,12 +33,11 @@ export class SwipePage {
     ionViewDidLoad() {
         console.log('ionViewDidLoad SwipePage');
     }
+    ionViewDidEnter() {
+        this.slides.slideTo(1, 0, false);
+    }
     nextSlide(){
         console.log("next");
-        if(this.wait == false){
-            this.wait = true;
-            return;
-        }
         let c = this.cal[2];
         this.current_calendar = [c.year, c.month];
         let ym = this.calendar.nextMonth(c.year, c.month);

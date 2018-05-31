@@ -9,6 +9,10 @@
 デモ  
 [https://ionic-calendar-demo.firebaseapp.com](https://ionic-calendar-demo.firebaseapp.com)
 
+# Netlifyでデプロイ
+
+<!-- Markdown snippet -->
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/scrpgil/ionic-calendar-demo/blob/master/README.md)
 
 
 # Ionic Calendar Demo

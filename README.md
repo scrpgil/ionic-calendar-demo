@@ -11,9 +11,7 @@
 
 # Netlifyでデプロイ
 
-<!-- Markdown snippet -->
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/scrpgil/ionic-calendar-demo/blob/master/README.md)
-
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/scrpgil/ionic-calendar-demo)
 
 # Ionic Calendar Demo
 
